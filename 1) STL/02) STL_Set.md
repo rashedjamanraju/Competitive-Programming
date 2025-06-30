@@ -59,6 +59,7 @@ cout << "📊 Empty set size: " << s.size() << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 📊 Empty set size: 0
 ```
@@ -73,6 +74,7 @@ cout << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 🌈 Set s1: 1 2 3 5 8 
 ```
@@ -88,6 +90,7 @@ cout << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 ✨ Set from vector: 1 3 5 7 10 
 ```
@@ -102,6 +105,7 @@ cout << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 ⬇️ Descending set: 8 5 3 2 1 
 ```
@@ -120,6 +124,7 @@ cout << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 ✨ Forward: 10 20 30 40 50 
 ```
@@ -135,6 +140,7 @@ cout << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 🚀 Iterator forward: 10 20 30 40 50 
 ```
@@ -150,6 +156,7 @@ cout << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 🔄 Reverse: 50 40 30 20 10 
 ```
@@ -172,24 +179,9 @@ cout << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 ➕ After insert: 2 5 8 
-```
-
-### 📊 Insert with Return Check
-
-```cpp
-auto result1 = s.insert(10);  // 📈 New element
-auto result2 = s.insert(5);   // 🚫 Duplicate
-
-cout << "🎯 Insert 10: " << (result1.second ? "✅ Success" : "❌ Failed") << endl;
-cout << "🎯 Insert 5: " << (result2.second ? "✅ Success" : "❌ Failed") << endl;
-```
-
-**🖥️ Output:**
-```
-🎯 Insert 10: ✅ Success
-🎯 Insert 5: ❌ Failed
 ```
 
 ### 🔄 Insert Range
@@ -203,29 +195,16 @@ cout << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 🔄 After range insert: 1 2 3 5 7 8 9 10 
-```
-
-### ⚡ Emplace
-
-```cpp
-s.emplace(15);  // 🚀 Direct construction
-cout << "⚡ After emplace(15): ";
-for (int x : s) cout << x << " ";
-cout << endl;
-```
-
-**🖥️ Output:**
-```
-⚡ After emplace(15): 1 2 3 5 7 8 9 10 15 
 ```
 
 ---
 
 ## 🔍 Search Operations
 
-### 🎯 Find Element
+### 🎯 Find Element / Check Existence
 
 ```cpp
 set<int> s = {1, 3, 5, 7, 9};
@@ -242,6 +221,7 @@ if (it != s.end()) {
 ```
 
 **🖥️ Output:**
+
 ```
 🔍 Set: 1 3 5 7 9 
 ✅ Found 5
@@ -255,26 +235,10 @@ cout << "🔢 Count of 6: " << s.count(6) << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 🔢 Count of 5: 1
 🔢 Count of 6: 0
-```
-
-### ✅ Check Existence
-
-```cpp
-bool exists = s.find(5) != s.end();
-cout << "✅ Element 5 exists: " << (exists ? "Yes" : "No") << endl;
-
-// Alternative way
-bool exists2 = s.count(5) > 0;
-cout << "✅ Alternative check: " << (exists2 ? "Yes" : "No") << endl;
-```
-
-**🖥️ Output:**
-```
-✅ Element 5 exists: Yes
-✅ Alternative check: Yes
 ```
 
 ---
@@ -297,6 +261,7 @@ cout << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 📋 Before erase: 1 3 5 7 9 
 🗑️ Removed count: 1
@@ -317,6 +282,7 @@ cout << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 🎯 Erased by iterator
 📋 After iterator erase: 1 3 9 
@@ -335,6 +301,7 @@ cout << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 🔥 After range erase: 1 2 7 8 9 
 ```
@@ -347,6 +314,7 @@ cout << "🧹 After clear: " << s2.size() << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 🧹 After clear: 0
 ```
@@ -355,7 +323,7 @@ cout << "🧹 After clear: " << s2.size() << endl;
 
 ## 📊 Size and Status Operations
 
-### 📏 Size Operations
+### 📏 Size Operations & Empty or Not Check
 
 ```cpp
 set<int> s = {10, 20, 30, 40, 50};
@@ -365,6 +333,7 @@ cout << "🎯 Max size: " << s.max_size() << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 📏 Size: 5
 ❓ Empty: No
@@ -389,6 +358,7 @@ cout << "🔍 Last (using end): " << *last << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 🔍 First element: 2
 🔍 Last element: 10
@@ -411,49 +381,11 @@ if (ub != s.end()) cout << "📍 Upper bound of 8: " << *ub << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 📊 Set: 2 4 6 8 10 12 14 
 📍 Lower bound of 7: 8
 📍 Upper bound of 8: 10
-```
-
-### 🎯 Equal Range
-
-```cpp
-auto range = s.equal_range(8);
-cout << "🎯 Equal range of 8:" << endl;
-cout << "   Lower: " << *range.first << endl;
-if (range.second != s.end()) {
-    cout << "   Upper: " << *range.second << endl;
-}
-```
-
-**🖥️ Output:**
-```
-🎯 Equal range of 8:
-   Lower: 8
-   Upper: 10
-```
-
-### 🔄 Iterator Arithmetic
-
-```cpp
-auto it = s.begin();
-advance(it, 2);  // Move 2 positions
-cout << "🔄 3rd element: " << *it << endl;
-
-auto it2 = next(s.begin(), 3);  // Alternative
-cout << "🔄 4th element: " << *it2 << endl;
-
-auto it3 = prev(s.end(), 1);  // Last element
-cout << "🔄 Last element: " << *it3 << endl;
-```
-
-**🖥️ Output:**
-```
-🔄 3rd element: 6
-🔄 4th element: 8
-🔄 Last element: 14
 ```
 
 ---
@@ -470,40 +402,9 @@ cout << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 ⬇️ Descending: 9 8 5 2 1 
-```
-
-### 🎯 Custom Struct
-
-```cpp
-struct Point {
-    int x, y;
-    Point(int x, int y) : x(x), y(y) {}
-};
-
-struct PointComp {
-    bool operator()(const Point& a, const Point& b) const {
-        if (a.x != b.x) return a.x < b.x;
-        return a.y < b.y;
-    }
-};
-
-set<Point, PointComp> points;
-points.emplace(3, 4);
-points.emplace(1, 2);
-points.emplace(3, 1);
-
-cout << "🎯 Points: ";
-for (const auto& p : points) {
-    cout << "(" << p.x << "," << p.y << ") ";
-}
-cout << endl;
-```
-
-**🖥️ Output:**
-```
-🎯 Points: (1,2) (3,1) (3,4) 
 ```
 
 ### 🔥 Lambda Comparator
@@ -519,6 +420,7 @@ cout << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 🔥 By absolute value: -1 -2 3 -5 7 
 ```
@@ -538,6 +440,7 @@ cout << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 🔄 Set to vector: 1 2 5 8 9 
 ```
@@ -558,6 +461,7 @@ cout << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 📋 Original: 5 2 8 2 1 8 3 5 
 ✨ Unique: 1 2 3 5 8 
@@ -588,6 +492,7 @@ cout << "🔢 Multiset size: " << ms.size() << endl;
 ```
 
 **🖥️ Output:**
+
 ```
 📊 Original: 3 1 4 1 5 9 2 6 5 
 📦 Set: 1 2 3 4 5 6 9 
@@ -598,104 +503,18 @@ cout << "🔢 Multiset size: " << ms.size() << endl;
 
 ---
 
-## 🔧 CP Macros and Shortcuts
-
-### 🚀 Essential Macros
-
-```cpp
-#define all(s) (s).begin(), (s).end()
-#define sz(s) (s).size()
-#define present(s, x) ((s).count(x))
-#define first_element(s) (*(s).begin())
-#define last_element(s) (*(s).rbegin())
-
-set<int> s = {5, 3, 8, 1, 6};
-
-cout << "📏 Size: " << sz(s) << endl;
-cout << "✅ 5 present: " << (present(s, 5) ? "Yes" : "No") << endl;
-cout << "🔍 First: " << first_element(s) << endl;
-cout << "🔍 Last: " << last_element(s) << endl;
-
-vector<int> vec(all(s));  // Copy to vector
-cout << "📋 Copied: ";
-for (int x : vec) cout << x << " ";
-cout << endl;
-```
-
-**🖥️ Output:**
-```
-📏 Size: 5
-✅ 5 present: Yes
-🔍 First: 1
-🔍 Last: 8
-📋 Copied: 1 3 5 6 8 
-```
-
-### 🎯 CP Template
-
-```cpp
-#include <bits/stdc++.h>
-using namespace std;
-
-#define FAST_IO ios_base::sync_with_stdio(false); cin.tie(NULL);
-#define all(s) (s).begin(), (s).end()
-#define sz(s) (s).size()
-
-void solve() {
-    int n;
-    // cin >> n;
-    n = 5;  // Demo
-    
-    set<int> s;
-    vector<int> arr = {3, 1, 4, 1, 5};  // Demo data
-    
-    for(int i = 0; i < n; i++) {
-        // cin >> arr[i];
-        s.insert(arr[i]);
-    }
-    
-    cout << "📊 Unique count: " << sz(s) << endl;
-    cout << "📋 Sorted unique: ";
-    for(int x : s) cout << x << " ";
-    cout << endl;
-}
-
-int main() {
-    FAST_IO;
-    
-    int t = 1;
-    // cin >> t;
-    
-    while(t--) {
-        solve();
-    }
-    
-    return 0;
-}
-```
-
-**🖥️ Output:**
-```
-📊 Unique count: 4
-📋 Sorted unique: 1 3 4 5 
-```
-
----
-
-<div align="center">
-
 ## ⚡ STL Set Time Complexity
 
-| Operation | Time Complexity | Space | Use Case |
-|-----------|----------------|-------|----------|
-| 🔍 find() | **O(log n)** | O(1) | Search element |
-| ➕ insert() | **O(log n)** | O(1) | Add element |
-| 🗑️ erase() | **O(log n)** | O(1) | Remove element |
-| 🔢 count() | **O(log n)** | O(1) | Check existence |
-| 📍 lower_bound() | **O(log n)** | O(1) | First >= x |
-| 📍 upper_bound() | **O(log n)** | O(1) | First > x |
-| 🔄 begin/end | **O(1)** | O(1) | Iterator |
-| 📏 size() | **O(1)** | O(1) | Get count |
+| Operation        | Time Complexity    | Space | Use Case        |
+| ---------------- | ------------------ | ----- | --------------- |
+| 🔍 find()        | **O(log n)** | O(1)  | Search element  |
+| ➕ insert()      | **O(log n)** | O(1)  | Add element     |
+| 🗑️ erase()     | **O(log n)** | O(1)  | Remove element  |
+| 🔢 count()       | **O(log n)** | O(1)  | Check existence |
+| 📍 lower_bound() | **O(log n)** | O(1)  | First >= x      |
+| 📍 upper_bound() | **O(log n)** | O(1)  | First > x       |
+| 🔄 begin/end     | **O(1)**     | O(1)  | Iterator        |
+| 📏 size()        | **O(1)**     | O(1)  | Get count       |
 
 </div>
 
